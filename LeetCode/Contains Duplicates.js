@@ -12,3 +12,6 @@ var containsDuplicate = function(nums) {
     return s.size !== nums.length
 };
 
+// make a new set
+// if that new set is not equal to to the length then their is not a duplicate.
+
