@@ -1,4 +1,4 @@
-/*2666. Allow One Function Call
+/* 2666. Allow One Function Call
 Easy
 
 Companies
@@ -7,6 +7,29 @@ Given a function fn, return a new function that is identical to the original fun
 The first time the returned function is called, it should return the same result as fn.
 Every subsequent time it is called, it should return undefined.
  
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+const once = function(fn) {
+    let counter = 0;
+    return function(...args){
+        if (counter === 0) {
+            counter++;
+            return fn(...args);
+        }
+    }
+};
+
+/**
+ * let fn = (a,b,c) => (a + b + c)
+ * let onceFn = once(fn)
+ *
+ * onceFn(1,2,3); // 6
+ * onceFn(2,3,6); // returns undefined without calling fn
+ */
+
+/*
 
 Example 1:
 
@@ -25,7 +48,7 @@ const onceFn = once(fn);
 onceFn(5, 7, 4); // 140
 onceFn(2, 3, 6); // undefined, fn was not called
 onceFn(4, 6, 8); // undefined, fn was not called
- 
+  /*
 
 Constraints:
 
