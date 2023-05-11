@@ -11,7 +11,7 @@ var createCounter = function(n) {
        
     };
 };
-
+//
 // solution
 var createCounter = function(n) {
     return function() {
