@@ -13,6 +13,7 @@
 var getConcatenation = function(nums) {
     
 };
+//
 
 var getConcatenation = function(nums) {
 	//spread the nums array twice and return it
