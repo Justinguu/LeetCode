@@ -34,7 +34,7 @@ s and t consist of lowercase English letters.
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    return s.split('').sort().join('') === t.split('').sort().join('');
+    
 };
 
 /**
