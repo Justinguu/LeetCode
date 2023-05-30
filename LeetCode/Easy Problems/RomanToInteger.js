@@ -40,10 +40,48 @@ Example 3:
 Input: s = "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
- 
 
+
+ /**
+ * @param {string} s
+ * @return {number}
+ */
+// default
+
+ var romanToInt = function(s) {
+   
+};
+
+
+// ANSWER
+var romanToInt = function(s) {
+    const symbols = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    let ans = 0;
+
+    for (let i = 0; i < s.length; i++){
+        const cur = symbols[s[i]]
+        const next = symbols[s[i + 1]];
+
+        if (cur < next){
+            ans += next - cur;
+            i++;
+        } else {
+            ans += cur;
+        }
+    }
+    return ans
+};
+
+/*
 Constraints:
-
 1 <= s.length <= 15
 s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
