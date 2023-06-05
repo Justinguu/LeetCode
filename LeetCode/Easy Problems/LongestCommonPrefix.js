@@ -33,6 +33,13 @@ Submissions
 Acceptance Rate
 41.0%
 */
+// Question
+var longestCommonPrefix = function(strs) {
+    
+};
+
+
+// Solution
 
 var longestCommonPrefix = function(strs) {
     'use strict';
