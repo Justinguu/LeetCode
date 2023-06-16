@@ -14,4 +14,4 @@ var containsDuplicate = function(nums) {
 
 // make a new set
 // if that new set is not equal to to the length then their is not a duplicate.
-
+//
