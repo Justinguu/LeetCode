@@ -39,7 +39,7 @@ var longestCommonPrefix = function(strs) {
 };
 
 
-// Solution
+/// Solution
 
 var longestCommonPrefix = function(strs) {
     'use strict';
