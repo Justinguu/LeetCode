@@ -8,14 +8,14 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
-    let y = x.toString().split("").reverse().join("");
-    return x === parseInt(y)
-    };
+// var isPalindrome = function(x) {
+//     let y = x.toString().split("").reverse().join("");
+//     return x === parseInt(y)
+//     };
     
     
-    // let palin = x.toString().split("").reverse().join("");
-    // return x === parseInt(palin)
+    let palin = x.toString().split("").reverse().join("");
+    return x === parseInt(palin)
     
     //  let y = x.toString().split("").reverse().join("");
     //         return x === parseInt(y) 
