@@ -19,11 +19,11 @@ var getConcatenation = function(nums) {
 	////spread the nums array twice and return it
     return [...nums,...nums]
 };
-////
+//
 
 var getConcatenation = function(nums) {
     const result = [];
-    for(let i= 0;  i< nums.length; i++) {
+    for(let i= 0;  i < nums.length; i++) {
         result[i] = nums[i];
         result [i + nums.length] = nums[i]
     }
