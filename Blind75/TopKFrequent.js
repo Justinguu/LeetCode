@@ -16,23 +16,32 @@ var topKFrequent = function(nums, k) {
 
 // Answer
 var topKFrequent = function(nums, k) {
-    let map = new Map();  // initialize a map The keys will be the unique ele, and the values will be the count
-    for (let i = 0; i < nums.length; i++){
-        if (map.has(nums[i])) { // checks if nums[i] is already a key in map
-            map.set(nums[i], map.get(nums[i]) + 1) // if not then we increment the count by 1
-        } else {
-            map.set(nums[i], 1)  // if its not then its the first occurence so we add it to map and give it a freq of 1
-        } 
+    let map = {}
+    for (let num of nums){
+        if (!map[num]){
+            map[num] = 1
+            map[num]++
+        }
     }
-     let sortedArr = [...map.keys()]   // creates an  array of the keys
-     .sort((a, b) => map.get(b) - map.get(a))  // sorts all the elements based on the freq count. Descending order so highest frequency comes first 
-     .slice(0, k) // take the first k element. Which is the the one with the most.
+    return [...Object.keys(map).sort((a,b) => map[b] - map[a])].slice(0, k)
+};
+var topKFrequent = function(nums, k) {
+    // let map = new Map();  // initialize a map The keys will be the unique ele, and the values will be the count
+    // for (let i = 0; i < nums.length; i++){
+    //     if (map.has(nums[i])) { // checks if nums[i] is already a key in map
+    //         map.set(nums[i], map.get(nums[i]) + 1) // if not then we increment the count by 1
+    //     } else {
+    //         map.set(nums[i], 1)  // if its not then its the first occurence so we add it to map and give it a freq of 1
+    //     } 
+    // }
+    //  let sortedArr = [...map.keys()]   // creates an  array of the keys
+    //  .sort((a, b) => map.get(b) - map.get(a))  // sorts all the elements based on the freq count. Descending order so highest frequency comes first 
+    //  .slice(0, k) // take the first k element. Which is the the one with the most.
 
-     return sortedArr
+    //  return sortedArr
 
 
 };
-
 
 
 /*
