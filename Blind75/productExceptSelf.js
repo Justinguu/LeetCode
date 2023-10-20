@@ -16,19 +16,37 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 
 You must write an algorithm that runs in O(n) time and without using the division operation.
 */
- var productExceptSelf = function(nums) {
-        let res =[];
-        nums.reduce((leftP, curr, i) => {
-            res[i] = leftP;
-            return leftP*curr;
-        }, 1)
-        nums.reduceRight((rightP, curr, i) => {
-            res[i] *= rightP;
-            return rightP*curr;
-        }, 1)
-        return res;
+//  var productExceptSelf = function(nums) {
+//         let res =[];
+//         nums.reduce((leftP, curr, i) => {
+//             res[i] = leftP;
+//             return leftP*curr;
+//         }, 1)
+//         nums.reduceRight((rightP, curr, i) => {
+//             res[i] *= rightP;
+//             return rightP*curr;
+//         }, 1)
+//         return res;
     
-};
+// };
+
+var productExceptSelf = function(nums) {
+    let res = []; // Initialize an empty array to store the result.
+    let leftMult = 1; // Initialize a variable to keep track of the product of elements to the left.
+    let rightMult = 1; // Initialize a variable to keep track of the product of elements to the right.
+
+    for (let i = nums.length - 1; i >= 0; i--) { // Loop through the array in reverse order.
+        res[i] = rightMult; // Store the product of elements to the right in the result array.
+        rightMult *= nums[i]; // Update the right product variable by multiplying it with the current element in nums.
+    }
+
+    for (let j = 0; j < nums.length; j++) {
+        res[j] *= leftMult; // Calculate the product of elements to the left and right for each element and update the result array.
+        leftMult *= nums[j]; // Update the left product variable by multiplying it with the current element in nums.
+    }
+
+    return res; // Return the resulting array containing the product of elements except the one at the same index.
+}
 /*
 Example 1:
 
