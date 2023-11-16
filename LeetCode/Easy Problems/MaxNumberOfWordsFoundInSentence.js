@@ -12,7 +12,17 @@ You are given an array of strings sentences, where each sentences[i] represents 
 
 Return the maximum number of words that appear in a single sentence.
 */
-
+var mostWordsFound = function(sentences) {
+    let max = 0;
+    for (let i = 0; i < sentences.length; i++){
+        let words = sentences[i].split(" ").length
+        console.log(words)
+            if (words > max){
+                max = words
+            }
+    }
+    return max
+};
 /*
 
 Example 1:
