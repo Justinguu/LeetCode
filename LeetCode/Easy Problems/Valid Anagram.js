@@ -40,3 +40,35 @@ Example 2:
 Input: s = "rat", t = "car"
 Output: false
 */
+
+// 2nd solution 
+
+var isAnagram = function(s, t) {
+    if (s.length !== t.length){
+        return false
+    }
+
+    let map = {}
+    for (let i = 0; i < s.length; i++){
+        if(s[i] in map){ 
+            map[s[i]]++ 
+            
+        } else {
+            map[s[i]] = 1
+        }
+    }
+        let map2 = {}
+        for (let i = 0; i < t.length; i++){
+            if(t[i] in map2){
+                map2[t[i]]++
+            } else {
+                map2[t[i]] = 1
+            }
+        }
+        for (let key in map){
+            if (map[key] !== map2[key]){
+                return false
+            }
+        } 
+        return true
+};
