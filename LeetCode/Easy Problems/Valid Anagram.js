@@ -45,31 +45,30 @@ Output: false
 
 var isAnagram = function(s, t) {
     if (s.length !== t.length){
-        return false
+        return false     // if the length of s and t are not equal, return false
     }
 
     let map = {}
-    for (let i = 0; i < s.length; i++){
-        if(s[i] in map){ 
-            map[s[i]]++ 
+    for (let i = 0; i < s.length; i++){ // loop through s
+        if(s[i] in map){  // if s index is in map   
+            map[s[i]]++  // increment the value
             
         } else {
-            map[s[i]] = 1
+            map[s[i]] = 1 // if not in map, set value to 1
         }
     }
         let map2 = {}
         for (let i = 0; i < t.length; i++){
-            if(t[i] in map2){
-                map2[t[i]]++
+            if(t[i] in map2){ // if t index is in map2
+                map2[t[i]]++  // increment the value
             } else {
-                map2[t[i]] = 1
+                map2[t[i]] = 1 // if not in map2, set value to 1
             }
         }
         for (let key in map){
-            if (map[key] !== map2[key]){
-                return false
+            if (map[key] !== map2[key]){  // if the value of key in map is not equal to the value of key in map2
+                return false // return false
             }
         } 
         return true
 };
-//
