@@ -28,9 +28,26 @@ var mergeAlternately = function(word1, word2) {
             newWord.push(word2[i]);
         }
     }
-
     // Join the characters in newWord into a single string and return the result
     return newWord.join('');
+};
+
+// example 2
+
+const mergeAlternately = (word1, word2) => {
+    const maxLength = Math.max(word1.length, word2.length);
+    let newWord = '';
+
+    for (let i = 0; i < maxLength; i++) {
+        if (i < word1.length) {
+            newWord += word1[i];
+        }
+        if (i < word2.length) {
+            newWord += word2[i];
+        }
+    }
+
+    return newWord;
 };
 
 /*
