@@ -28,7 +28,7 @@ var strStr = function(haystack, needle) {
             return i;
         }
     }
-
+//
     // If the loop completes without finding the needle, return -1
     return -1;
 };
