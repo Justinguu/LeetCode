@@ -37,7 +37,7 @@ var strStr = function(haystack, needle) {
     return haystack.indexOf(needle);
 }
 // Time Complexity: O(n) 
-////
+// space complexity: O(1)
 
 
 /*
