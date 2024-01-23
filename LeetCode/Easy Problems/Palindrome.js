@@ -21,6 +21,17 @@
     //         return x === parseInt(y) 
 
 
+
+   
+       palindrome("A man, a plan, a canal. Panama");function isPalindrome(str) {
+           const cleanStr = str.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
+           for (let i = 0; i < cleanStr.length / 2; i++) {
+             if (cleanStr[i] !== cleanStr[cleanStr.length - 1 - i]) {
+                 return false;
+             }
+           }
+           return true;
+       }
 /*
 Example 1:
 
